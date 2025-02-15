@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  interpolate-size: allow-keywords;
+
+  --shadow-primary: #f9fafb;
+  --shadow-secondary: #9ca3af;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-redhat: "Red Hat Display", serif !important;
+}
+
+@layer utilities {
+  .text-shadow-1 {
+    text-shadow: 0.5px 0.5px 1.5px var(--shadow-secondary),
+      -0.5px -0.5px 1.5px var(--shadow-primary) !important;
+  }
+  .text-shadow-2 {
+    text-shadow: 1px 1px 2px var(--shadow-secondary),
+      -1px -1px 2px var(--shadow-primary) !important;
+  }
+  .text-shadow-3 {
+    text-shadow: 2.5px 2.5px 3.5px var(--shadow-secondary),
+      -2.5px -2.5px 3.5px var(--shadow-primary) !important;
+  }
+
+  .box-shadow-1 {
+    box-shadow: -5px -5px 9px var(--shadow-primary),
+      5px 5px 9px var(--shadow-secondary) !important;
+  }
+  .box-shadow-2 {
+    box-shadow: inset -5px -5px 9px var(--shadow-primary),
+      inset 5px 5px 9px var(--shadow-secondary) !important;
+  }
+  .box-shadow-3 {
+    @apply after:absolute after:content-[''] after:size-[80%] after:bg-transparent after:rounded-full;
+    box-shadow: -5px -5px 9px var(--shadow-primary),
+      5px 5px 9px var(--shadow-secondary) !important;
+  }
+  .box-shadow-3::after {
+    box-shadow: inset -5px -5px 9px var(--shadow-primary),
+      inset 5px 5px 9px var(--shadow-secondary) !important;
+  }
+}
