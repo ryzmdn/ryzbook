@@ -55,7 +55,7 @@ export function FilterBar({
               name="category"
               value={filterMessage}
               onChange={handleFilterChange}
-              className="text-shadow-2 col-start-1 row-start-1 w-full appearance-none rounded-full py-1 pl-4 pr-8 text-sm text-gray-600 box-shadow-2 outline-0 sm:text-sm/6"
+              className="col-start-1 row-start-1 appearance-none py-1 pl-4 pr-8 block w-full rounded-full bg-white text-sm/6 text-gray-700 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
             >
               {filters.map((filter) => (
                 <option key={filter.key} value={filter.key}>
