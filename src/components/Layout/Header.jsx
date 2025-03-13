@@ -5,7 +5,7 @@ export function Header() {
     <header aria-labelledby="website-header" className="mx-auto w-full max-w-2xl bg-transparent px-3 py-16">
       <span id="website-header" className="sr-only">Website Header</span>
       <div className="mb-8 flex justify-center">
-        <div className="box-shadow-1 relative bg-zinc-200 dark:bg-zinc-800 rounded-full px-3.5 py-1.5 text-xs/6 text-gray-600 text-shadow-2 sm:text-sm/6">
+        <div className="box-shadow-1 relative bg-gray-200 dark:bg-gray-800 rounded-full px-3.5 py-1.5 text-xs/6 text-gray-600 text-shadow-2 sm:text-sm/6">
           This guestbook is open source only on GitHub.{" "}
           <Button href="https://github.com/ryzmdn/ryzbook" variant="text" aria-label="Visit github repository" defaultStyle={false} shadow={false} className="font-semibold">
             <span aria-hidden="true" className="absolute inset-0" /> Visit now <span aria-hidden="true">&rarr;</span>
