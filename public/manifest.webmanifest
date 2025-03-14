@@ -1,6 +1,6 @@
 {
   "name": "RyzBook",
-  "description": "RyzBook is a modern, beautifully designed space where users can share thoughts and messages. Built with React.js, Vite, TailwindCSS, and Firebase, featuring a Neumorphism aesthetic.",
+  "description": "RyzBook is a modern, beautifully designed space where users can share thoughts and messages. Built with React.js, Vite, TailwindCSS, and Firebase.",
   "short_name": "RyzBook",
   "start_url": "/",
   "display": "standalone",

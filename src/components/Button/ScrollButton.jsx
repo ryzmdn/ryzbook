@@ -31,7 +31,7 @@ export function ScrollButton() {
       <Button
         onClick={scrollToTop}
         variant="secondary"
-        circle={true}
+        rounded={true}
         aria-label="Button to scroll to the top"
         className="fixed right-7 bottom-7 z-40 size-9 backdrop-blur cursor-pointer"
       >

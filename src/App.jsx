@@ -7,6 +7,7 @@ import { FilterBar } from "@/components/Filters";
 import { NotFound } from "@/components/NotFound";
 import { Message } from "@/components/Message";
 import { useMessages } from "@/hooks/useMessage";
+import { ThemeButton } from "@/components/Button/ThemeButton";
 
 export default function App() {
   const [openForm, setOpenForm] = useState(false);
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <div className="relative isolate text-gray-600 h-full bg-inherit pt-10 sm:pt-5">
       <Header />
+      <ThemeButton />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
         <section className="overflow-hidden rounded-lg space-y-6 my-3 p-3 box-shadow-1 sm:px-6">
           <FilterBar

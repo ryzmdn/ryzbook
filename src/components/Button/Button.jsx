@@ -3,54 +3,55 @@ import { Link } from "react-router";
 import { clss } from "@/utils/clss";
 
 const variantStyles = {
-  primary: "bg-zinc-200 text-gray-700 text-shadow-1 disabled:bg-zinc-200 disabled:text-gray-400",
-  secondary: "text-gray-700 bg-zinc-200 text-shadow-1",
-  text: "bg-transparent text-gray-800 text-shadow-1",
+  primary: "bg-pink-600 text-gray-50 hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600 disabled:text-gray-500 disabled:bg-gray-400 dark:disabled:bg-gray-800",
+  secondary: "text-gray-950 dark:text-gray-50 bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-900 ring-1 ring-inset ring-gray-300 dark:ring-gray-700",
+  soft: "bg-gray-50/10 hover:bg-gray-50/20 text-gray-950 dark:text-gray-50",
+  text: "bg-transparent text-gray-950 dark:text-gray-50",
 };
 
 export function Button({
   variant = "primary",
   defaultStyle = true,
-  circle = false,
+  shadow = true,
+  type = "button",
+  rounded = false,
   children,
   className,
-  shadow = true,
-  disabled,
-  type = "button",
-  href,
-  onClick,
   ...props
 }) {
-  const buttonShadow = circle ? "box-shadow-3" : "box-shadow-1";
-
   const combinedClassName = clss(
-    variantStyles[variant],
     defaultStyle ? "text-sm font-semibold py-2 px-3" : "",
+    variantStyles[variant],
     className,
-    variant === "text" ? "shadow-none" : "",
-    shadow ? buttonShadow : "shadow-none",
-    circle ? "rounded-full" : "rounded-md",
-    disabled ? "cursor-not-allowed hover:bg-zinc-200" : "cursor-pointer",
-    "inline-flex justify-center items-center gap-x-2 transition-all duration-300 ease-linear"
+    shadow ? "shadow-sm" : "shadow-none",
+    rounded ? "rounded-full" : "rounded-md",
+    "inline-flex justify-center items-center gap-x-2 cursor-pointer"
   );
 
-  if (href) {
-    const isExternalLink = href.startsWith("http://") || href.startsWith("https://");
-    
-    return isExternalLink ? (
+  if ("to" in props) {
+    return (
+      <Link
+        className={combinedClassName}
+        {...(props)}
+      >
+        {children}
+      </Link>
+    );
+  }
+
+  if ("href" in props && typeof props.href === "string") {
+    const isExternalLink =
+      props.href.startsWith("http://") || props.href.startsWith("https://");
+    return (
       <a
         className={combinedClassName}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        {...props}
+        {...(props)}
+        {...(isExternalLink
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
       >
         {children}
       </a>
-    ) : (
-      <Link className={combinedClassName} to={href} {...props}>
-        {children}
-      </Link>
     );
   }
 
@@ -58,9 +59,7 @@ export function Button({
     <button
       type={type}
       className={combinedClassName}
-      disabled={disabled}
-      onClick={onClick}
-      {...props}
+      {...(props)}
     >
       {children}
     </button>
@@ -71,7 +70,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(["primary", "secondary", "text"]),
   defaultStyle: PropTypes.bool,
   shadow: PropTypes.bool,
-  circle: PropTypes.bool,
+  rounded: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
   disabled: PropTypes.bool,

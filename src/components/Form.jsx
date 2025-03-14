@@ -93,7 +93,7 @@ export function Form({
     if (canSendMessage) {
       return (
         <>
-          <Svg width={16} height={16} fill="#374151" draw={["M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z"]} className="-rotate-45 -translate-y-0.5" />
+          <Svg width={16} height={16} fill="#f9fafb" draw={["M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z"]} className="-rotate-45 -translate-y-0.5" />
           Send message
         </>
       );
@@ -112,14 +112,14 @@ export function Form({
       onSubmit={handleSubmit}
       className="flex flex-col"
     >
-      <div className="p-4 border-b border-gray-300 sm:px-6">
+      <div className="p-4 border-b border-gray-200 dark:border-gray-800 sm:px-6">
         <header
           aria-labelledby="sidebar-header"
           className="flex items-center justify-between"
         >
           <h3
             id="sidebar-header"
-            className="text-base text-gray-900 font-semibold text-shadow-2"
+            className="text-base text-gray-900 dark:text-gray-100 font-semibold"
           >
             New Message
           </h3>
@@ -128,6 +128,7 @@ export function Form({
               onClick={close}
               defaultStyle={false}
               shadow={false}
+              variant="text"
               aria-label="Close sidebar button"
             >
               <Svg width={20} height={20} fill="#4b5563" draw={["M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"]} />
@@ -135,21 +136,21 @@ export function Form({
           </div>
         </header>
         <div className="mt-1">
-          <p className="text-sm text-gray-600 text-shadow-1">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
             Send any message here anonymously or under your name.
           </p>
         </div>
       </div>
-      <div className="flex flex-1 flex-col justify-between divide-y divide-gray-300 px-4 sm:px-6">
+      <div className="flex flex-1 flex-col justify-between divide-y divide-gray-200 dark:divide-gray-800 px-4 sm:px-6">
         <div className="space-y-6 pb-5 pt-6">
           <div>
             <div className="flex justify-between">
               <Label
                 htmlFor="username"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-800 dark:text-gray-200"
                 text="Username"
               />
-              <span id="username-optional" className="text-xs/6 text-gray-500 text-shadow-1">
+              <span id="username-optional" className="text-xs/6 text-gray-500">
                 Optional
               </span>
             </div>
@@ -165,7 +166,7 @@ export function Form({
                 className={clss(
                   isLoading || !canSendMessage
                     ? "cursor-not-allowed"
-                    : "focus:outline-red-600",
+                    : "focus:outline-pink-600",
                   "rounded-md font-medium"
                 )}
               />
@@ -175,16 +176,16 @@ export function Form({
             <div className="flex justify-between">
               <Label
                 htmlFor="message"
-                className="block text-sm/6 font-medium text-gray-900 after:ml-0.5 after:text-red-500 after:content-['*']"
+                className="block text-sm/6 font-medium text-gray-800 dark:text-gray-200 after:ml-0.5 after:text-pink-500 after:content-['*']"
                 text="Message"
               />
               <span
                 id="username-optional"
                 className={clss(
                   messageText.length === MAX_TEXTAREA
-                    ? "text-red-500"
+                    ? "text-pink-500"
                     : "text-gray-500",
-                  "text-xs/6 text-shadow-1"
+                  "text-xs/6"
                 )}
               >
                 {messageText.length} / {MAX_TEXTAREA} Characters
@@ -200,7 +201,7 @@ export function Form({
                 className={clss(
                   isLoading || !canSendMessage
                     ? "cursor-not-allowed focus:ring-gray-400"
-                    : "focus:outline-red-600",
+                    : "focus:outline-pink-600",
                   "field-sizing-content resize-none rounded-md"
                 )}
                 maxLength={MAX_TEXTAREA}
@@ -213,17 +214,17 @@ export function Form({
         </div>
 
         <div className="w-full mt-2">
-          <h3 className="text-sm/6 font-medium text-gray-900">Rules for sending messages</h3>
+          <h3 className="text-sm/6 font-medium text-gray-900 dark:text-gray-100">Rules for sending messages</h3>
 
-          <ol className="box-shadow-2 custom-scrollbar text-sm mt-2 p-4 max-h-52 overflow-y-auto list-decimal marker:text-gray-600 text-shadow-3 space-y-4 pl-8 rounded-l-lg">
+          <ol className="box-shadow-2 custom-scrollbar text-sm mt-2 p-4 max-h-52 overflow-y-auto list-decimal marker:text-gray-600 dark:marker:text-gray-400 text-shadow-3 space-y-4 pl-8 rounded-l-lg">
             {rules.map(rule => (
-              <li key={rule}>{rule}</li>
+              <li key={rule} className="text-gray-600 dark:text-gray-400">{rule}</li>
             ))}
           </ol>
         </div>
       </div>
 
-      <div className="fixed left-0 bottom-0 flex justify-end items-center gap-x-4 w-full p-4 bg-gray-200 border-t border-gray-300">
+      <div className="fixed left-0 bottom-0 flex justify-end items-center gap-x-4 w-full p-4 bg-transparent border-t border-gray-300 dark:border-gray-700">
         <Button
           type="button"
           onClick={close}

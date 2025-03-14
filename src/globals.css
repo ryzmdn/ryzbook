@@ -14,34 +14,16 @@
 }
 
 @layer utilities {
-  .text-shadow-1 {
-    text-shadow: 0.5px 0.5px 1.5px var(--shadow-secondary),
-      -0.5px -0.5px 1.5px var(--shadow-primary) !important;
-  }
-  .text-shadow-2 {
-    text-shadow: 1px 1px 2px var(--shadow-secondary),
-      -1px -1px 2px var(--shadow-primary) !important;
-  }
-  .text-shadow-3 {
-    text-shadow: 2.5px 2.5px 3.5px var(--shadow-secondary),
-      -2.5px -2.5px 3.5px var(--shadow-primary) !important;
-  }
-
-  .box-shadow-1 {
-    box-shadow: -5px -5px 9px var(--shadow-primary),
-      5px 5px 9px var(--shadow-secondary) !important;
-  }
-  .box-shadow-2 {
-    box-shadow: inset -5px -5px 9px var(--shadow-primary),
-      inset 5px 5px 9px var(--shadow-secondary) !important;
-  }
-  .box-shadow-3 {
-    @apply after:absolute after:content-[''] after:size-[80%] after:bg-transparent after:rounded-full;
-    box-shadow: -5px -5px 9px var(--shadow-primary),
-      5px 5px 9px var(--shadow-secondary) !important;
-  }
-  .box-shadow-3::after {
-    box-shadow: inset -5px -5px 9px var(--shadow-primary),
-      inset 5px 5px 9px var(--shadow-secondary) !important;
+  html, body, div, span, iframe, h1, h2, h3, 
+  h4, h5, h6, p, blockquote, pre, a, abbr, 
+  address, cite, code, del, dfn, em, img, ins, 
+  kbd, q, s, small, strong, sub, sup, tt, var, 
+  b, u, i, center, dl, dt, dd, ol, ul, li, 
+  fieldset, form, label, legend, table, caption, 
+  tbody, tfoot, thead, tr, th, td, article, aside, 
+  canvas, details, figure, figcaption, footer, 
+  header, hgroup, menu, nav, section, summary,
+  time, mark, audio, video {
+    @apply transition-all duration-200 ease-linear;
   }
 }

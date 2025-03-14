@@ -36,7 +36,7 @@ function Field({
         value={value}
         onChange={onChange}
         aria-describedby={id}
-        className={clss(className, "text-shadow-1 box-shadow-2 block w-full px-3 py-1.5 text-sm text-gray-600 outline-0 placeholder:text-gray-500")}
+        className={clss(className, "block w-full rounded-md bg-white px-3 py-1.5 text-sm/6 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600")}
         autoComplete="off"
         spellCheck={false}
         maxLength={maxLength}
@@ -55,7 +55,7 @@ function Field({
       value={value}
       onChange={onChange}
       aria-describedby={id}
-      className={clss(className, "text-shadow-1 box-shadow-2 block w-full px-3 py-1.5 text-sm text-gray-600 outline-0 placeholder:text-gray-500")}
+      className={clss(className, "block w-full rounded-md bg-white px-3 py-1.5 text-sm/6 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600")}
       autoComplete="off"
       spellCheck={false}
       maxLength={maxLength}
