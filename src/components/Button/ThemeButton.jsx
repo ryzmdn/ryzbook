@@ -23,7 +23,7 @@ export function ThemeButton() {
       rounded={true}
       defaultStyle={false}
       aria-label={`Change website theme to ${darkMode ? "Light" : "Dark"} mode`}
-      className="size-8"
+      className="absolute top-8 right-8 size-8"
     >
       {darkMode ? (
         <Svg
