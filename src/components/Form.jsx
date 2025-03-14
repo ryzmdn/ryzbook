@@ -166,7 +166,7 @@ export function Form({
                 className={clss(
                   isLoading || !canSendMessage
                     ? "cursor-not-allowed"
-                    : "focus:outline-red-600",
+                    : "focus:outline-pink-600",
                   "rounded-md font-medium"
                 )}
               />
@@ -176,14 +176,14 @@ export function Form({
             <div className="flex justify-between">
               <Label
                 htmlFor="message"
-                className="block text-sm/6 font-medium text-gray-800 dark:text-gray-200 after:ml-0.5 after:text-red-500 after:content-['*']"
+                className="block text-sm/6 font-medium text-gray-800 dark:text-gray-200 after:ml-0.5 after:text-pink-500 after:content-['*']"
                 text="Message"
               />
               <span
                 id="username-optional"
                 className={clss(
                   messageText.length === MAX_TEXTAREA
-                    ? "text-red-500"
+                    ? "text-pink-500"
                     : "text-gray-500",
                   "text-xs/6"
                 )}
@@ -201,7 +201,7 @@ export function Form({
                 className={clss(
                   isLoading || !canSendMessage
                     ? "cursor-not-allowed focus:ring-gray-400"
-                    : "focus:outline-red-600",
+                    : "focus:outline-pink-600",
                   "field-sizing-content resize-none rounded-md"
                 )}
                 maxLength={MAX_TEXTAREA}
