@@ -29,8 +29,8 @@ export function FilterBar({
   };
 
   return (
-    <div className="flex flex-1 justify-between items-center flex-wrap gap-x-5 gap-y-4">
-      <div className="flex items-center gap-x-7">
+    <div className="flex flex-col justify-center gap-4 max-w-md mx-auto">
+      <div className="flex justify-center items-center gap-x-7">
         <Button onClick={open} aria-label="Create new message">
           <Svg
             width={18}
@@ -42,7 +42,7 @@ export function FilterBar({
           />
           Send message
         </Button>
-        <span aria-hidden="true" className="h-6 w-px bg-zinc-400" />
+        <span aria-hidden="true" className="h-6 w-px bg-gray-300 dark:bg-gray-700" />
         <div>
           <Label
             htmlFor="category"
@@ -74,7 +74,7 @@ export function FilterBar({
           </div>
         </div>
       </div>
-      <div className="shrink-0 w-44 sm:w-52">
+      <div className="shrink-0 w-80 mx-auto">
         <Label htmlFor="searching" className="sr-only" text="Search by users" />
         <div className="grid grid-cols-1">
           <Field
