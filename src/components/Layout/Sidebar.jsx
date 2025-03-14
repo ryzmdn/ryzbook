@@ -16,9 +16,9 @@ export function Sidebar({ open, close }) {
 
   return (
     <>
-      <div className="fixed top-0 left-0 size-full z-45 bg-gray-900/90" />
+      <div className="fixed top-0 left-0 size-full z-45 bg-gray-950/90" />
 
-      <aside aria-labelledby="message-sidebar" className="pointer-events-none fixed top-0 left-0 z-50 flex flex-1 max-w-full h-full bg-zinc-200">
+      <aside aria-labelledby="message-sidebar" className="pointer-events-none fixed top-0 left-0 z-50 flex flex-1 max-w-full h-full bg-gray-50 dark:bg-gray-900">
         <span id="message-sidebar" className="sr-only">Sidebar for message form</span>
         <div
           className={clss(
