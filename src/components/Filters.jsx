@@ -30,8 +30,8 @@ export function FilterBar({
 
   return (
     <div className="flex flex-col justify-center gap-4 max-w-md mx-auto">
-      <div className="flex justify-center items-center gap-x-7">
-        <Button onClick={open} aria-label="Create new message">
+      <div className="flex justify-center items-center gap-x-6">
+        <Button onClick={open} rounded aria-label="Create new message">
           <Svg
             width={18}
             height={18}
