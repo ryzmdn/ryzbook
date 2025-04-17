@@ -30,8 +30,8 @@ export function FilterBar({
 
   return (
     <div className="flex flex-col justify-center gap-4 max-w-md mx-auto">
-      <div className="flex justify-center items-center gap-x-6">
-        <Button onClick={open} rounded aria-label="Create new message">
+      <div className="flex justify-center items-center gap-x-6 w-max max-w-full">
+        <Button onClick={open} rounded aria-label="Create new message" className="shrink-0">
           <Svg
             width={18}
             height={18}
@@ -42,7 +42,6 @@ export function FilterBar({
           />
           Send message
         </Button>
-        <span aria-hidden="true" className="h-6 w-px bg-gray-300 dark:bg-gray-700" />
         <div>
           <Label
             htmlFor="category"
@@ -73,29 +72,30 @@ export function FilterBar({
             />
           </div>
         </div>
-      </div>
-      <div className="shrink-0 w-80 mx-auto">
-        <Label htmlFor="searching" className="sr-only" text="Search by users" />
-        <div className="grid grid-cols-1">
-          <Field
-            id="searching"
-            name="searching"
-            type="search"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="e.g. john doe"
-            maxLength={125}
-            className="col-start-1 row-start-1 rounded-full py-1 pr-3 pl-10 sm:py-1.5"
-          />
-          <Svg
-            width={16}
-            height={16}
-            fill="#6b7280"
-            draw={[
-              "M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z",
-            ]}
-            className="col-start-1 row-start-1 ml-3.5 self-center"
-          />
+
+        <div>
+          <Label htmlFor="searching" className="sr-only" text="Search by users" />
+          <div className="grid grid-cols-1">
+            <Field
+              id="searching"
+              name="searching"
+              type="search"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              placeholder="e.g. john doe"
+              maxLength={125}
+              className="col-start-1 row-start-1 rounded-full py-1 pr-3 pl-10 sm:py-1.5"
+            />
+            <Svg
+              width={16}
+              height={16}
+              fill="#6b7280"
+              draw={[
+                "M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z",
+              ]}
+              className="col-start-1 row-start-1 ml-3.5 self-center"
+            />
+          </div>
         </div>
       </div>
     </div>
