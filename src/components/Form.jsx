@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/Button/Button";
+import { Button } from "@/components/Buttons/Button";
 import { Field, Label } from "@/components/Field";
 import { Svg } from "@/components/Optimizing/Svg";
 import { MessageService } from "@/lib/messages";

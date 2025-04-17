@@ -1,5 +1,5 @@
 import { Field, Label } from "@/components/Field";
-import { Button } from "@/components/Button/Button";
+import { Button } from "@/components/Buttons/Button";
 import { Svg } from "@/components/Optimizing/Svg";
 import PropTypes from "prop-types";
 

@@ -2,12 +2,12 @@ import { useState } from "react";
 import { Footer } from "@/components/Layout/Footer";
 import { Header } from "@/components/Layout/Header";
 import { Sidebar } from "@/components/Layout/Sidebar";
-import { ScrollButton } from "@/components/Button/ScrollButton";
+import { ScrollButton } from "@/components/Buttons/ScrollButton";
 import { FilterBar } from "@/components/Filters";
 import { NotFound } from "@/components/NotFound";
 import { Message } from "@/components/Message";
 import { useMessages } from "@/hooks/useMessage";
-import { ThemeButton } from "@/components/Button/ThemeButton";
+import { ThemeButton } from "@/components/Buttons/ThemeButton";
 
 export default function App() {
   const [openForm, setOpenForm] = useState(false);
