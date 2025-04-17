@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Footer } from "@/components/Layout/Footer";
 import { Header } from "@/components/Layout/Header";
 import { Sidebar } from "@/components/Layout/Sidebar";
-import { ScrollButton } from "@/components/Buttons/ScrollButton";
 import { FilterBar } from "@/components/Filters";
 import { NotFound } from "@/components/NotFound";
 import { Message } from "@/components/Message";
@@ -58,8 +57,6 @@ export default function App() {
       </div>
 
       <Sidebar open={openForm} close={() => setOpenForm(false)} />
-      <ScrollButton />
-
       <Footer />
     </div>
   );
