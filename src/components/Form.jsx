@@ -110,7 +110,7 @@ export function Form({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col"
+      className="flex flex-col w-full"
     >
       <div className="p-4 border-b border-gray-200 dark:border-gray-800 sm:px-6">
         <header
@@ -181,7 +181,7 @@ export function Form({
                 id="username-optional"
                 className={clss(
                   messageText.length === MAX_TEXTAREA
-                    ? "text-pink-500"
+                    ? "text-red-500"
                     : "text-gray-500",
                   "text-xs/6"
                 )}
@@ -214,7 +214,7 @@ export function Form({
         <div className="w-full mt-2">
           <h3 className="text-sm/6 font-medium text-gray-900 dark:text-gray-100">Rules for sending messages</h3>
 
-          <ol className="box-shadow-2 custom-scrollbar text-sm mt-2 p-4 max-h-52 overflow-y-auto list-decimal marker:text-gray-600 dark:marker:text-gray-400 text-shadow-3 space-y-4 pl-8 rounded-l-lg">
+          <ol className="flex flex-col gap-y-2 text-sm/6 mt-2 p-4 overflow-y-auto list-decimal marker:text-pink-500 dark:marker:text-gray-400 pl-8 rounded-lg border border-gray-300 dark:border-gray-700">
             {rules.map(rule => (
               <li key={rule} className="text-gray-600 dark:text-gray-400">{rule}</li>
             ))}
@@ -222,18 +222,20 @@ export function Form({
         </div>
       </div>
 
-      <div className="fixed left-0 bottom-0 flex justify-end items-center gap-x-4 w-full p-4 bg-transparent border-t border-gray-300 dark:border-gray-700">
+      <div className="flex justify-end items-center gap-x-4 w-full mt-8 p-4 bg-gray-50 dark:bg-gray-950 border-t border-gray-300 dark:border-gray-700">
         <Button
           type="button"
           onClick={close}
           variant="secondary"
           aria-label="Cancel create message"
+          className="px-2 py-1"
         >
           Cancel
         </Button>
         <Button
           type="submit"
           aria-label="Submit your message"
+          className="px-2 py-1"
           disabled={isLoading || !canSendMessage}
         >
           {isLoading ? "Sending..." : handleSubmitButton()}
