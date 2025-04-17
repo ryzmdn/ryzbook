@@ -78,7 +78,7 @@ export function FilterBar({
               name="category"
               value={filterMessage}
               onChange={handleFilterChange}
-              className="col-start-1 row-start-1 font-medium appearance-none py-2 pl-4 pr-8 block w-full bg-white text-sm/6 text-gray-700 rounded-md outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600"
+              className="col-start-1 row-start-1 font-medium appearance-none py-2 pl-4 pr-8 block w-full bg-white dark:bg-gray-950 text-sm/6 text-gray-700 dark:text-gray-300 rounded-md outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600"
             >
               {filters.map((filter) => (
                 <option key={filter.key} value={filter.key}>
