@@ -17,14 +17,14 @@ export function Message({
     <li className="pt-8 sm:inline-block sm:w-full sm:px-4">
       <figure className="rounded-2xl bg-gray-50 dark:bg-gray-900 p-6 shadow-lg ring-1 -ring-offset-1 ring-gray-200 dark:ring-gray-800">
         <blockquote className="text-gray-700 dark:text-gray-300">
-          <p>{`“${text}”`}</p>
+          <p>{text}</p>
         </blockquote>
         <figcaption className="mt-6 flex items-center gap-x-4">
-          <div className="relative shrink-0 flex justify-center items-center size-10 text-gray-50 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full">
-            <span>{getInitials(username)}</span>
+          <div className="relative shrink-0 flex justify-center items-center size-10 text-gray-50 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full shadow-sm">
+            <span className="text-base/6 font-bold">{getInitials(username)}</span>
           </div>
           <div className="w-full">
-            <p className="text-sm font-semibold text-pink-600 dark:text-pink-400">
+            <p className="text-sm font-semibold bg-gradient-to-br from-pink-500 to-violet-500 bg-clip-text text-transparent">
               {username}
             </p>
             <Time date={new Date(timestamp).toISOString().slice(0, 19)} className="text-xs text-gray-700 dark:text-gray-300">{formatDate(timestamp)}</Time>
