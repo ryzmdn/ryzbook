@@ -28,7 +28,7 @@ export default function App() {
       <Header />
       <ThemeButton />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
-        <section className="overflow-hidden rounded-lg space-y-6 my-3 p-3 box-shadow-1 sm:px-6">
+        <section className="overflow-hidden p-3 sm:px-6">
           <FilterBar
             filterMessage={filterMessage}
             setFilterMessage={setFilterMessage}
