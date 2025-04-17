@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Label({ htmlFor, className, text }) {
   return (
-    <label htmlFor={htmlFor} className={clss(className, "text-shadow-1")}>
+    <label htmlFor={htmlFor} className={className}>
       {text}
     </label>
   );
@@ -36,7 +36,7 @@ function Field({
         value={value}
         onChange={onChange}
         aria-describedby={id}
-        className={clss(className, "block w-full rounded-md bg-white px-3 py-1.5 text-sm/6 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600")}
+        className={clss(className, "block w-full rounded-md bg-white dark:bg-gray-950 px-3 py-1.5 text-sm/6 text-gray-700 dark:text-gray-300 outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600")}
         autoComplete="off"
         spellCheck={false}
         maxLength={maxLength}
@@ -55,7 +55,7 @@ function Field({
       value={value}
       onChange={onChange}
       aria-describedby={id}
-      className={clss(className, "block w-full rounded-md bg-white px-3 py-1.5 text-sm/6 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600")}
+      className={clss(className, "block w-full rounded-md bg-white dark:bg-gray-950 px-3 py-1.5 text-sm/6 text-gray-700 dark:text-gray-300 outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-700 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600")}
       autoComplete="off"
       spellCheck={false}
       maxLength={maxLength}
