@@ -1,4 +1,3 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 import { clss } from "@/utils/clss";
 
@@ -8,71 +7,58 @@ export function Svg({
   viewBox,
   width,
   height,
-  strokeDark,
-  stroke,
-  fillDark,
-  fill,
-  fillHovered,
+  current = false,
   className,
   children,
-  hasChildren = false,
 }) {
-  const [hover, setHover] = useState(false);
-  const darkMode = false;
-
-  const handleHover = (hover) => fillHovered && setHover(hover);
-
-  const strokeColor = darkMode ? strokeDark || stroke : stroke;
-  const fillColor = darkMode ? fillDark || fill : fill;
-  const fillHover = hover ? fillHovered : fillColor;
-  const strokeHover = hover ? fillHovered : strokeColor;
-  const xmlns = "http://www.w3.org/2000/svg";
-  const view = variant === "custom" ? viewBox : "0 0 24 24";
-
   return (
     <svg
-      xmlns={xmlns}
-      fill={variant !== "outline" ? fillHover : "none"}
-      viewBox={view}
-      stroke={variant === "outline" ? strokeHover : undefined}
-      strokeWidth={variant === "outline" ? 1.5 : undefined}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={variant === "custom" ? viewBox : "0 0 24 24"}
       width={width}
       height={height}
-      onMouseEnter={() => handleHover(true)}
-      onMouseLeave={() => handleHover(false)}
       aria-hidden="true"
-      className={clss(className, "pointer-events-none transition-all duration-300 ease-linear")}
-    >
-      {hasChildren ? (
-        children
-      ) : (
-        draw.map((d) => (
-          <path
-            key={d}
-            d={d}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          />
-        ))
+      className={clss(
+        className,
+        current || variant === "custom" || variant === "solid" ? "fill-current" : "",
+        current || variant === "custom" || variant === "outline" ? "outline-current" : "",
+        "pointer-events-none shrink-0"
       )}
+    >
+      {variant === "custom"
+        ? children
+        : draw.map((d) => (
+            <path
+              key={d}
+              d={d}
+              stroke={variant === "outline" ? "currentColor" : undefined}
+              strokeWidth={variant === "outline" ? 1.5 : undefined}
+              strokeLinecap={variant === "outline" ? "round" : undefined}
+              strokeLinejoin={variant === "outline" ? "round" : undefined}
+              strokeOpacity={variant === "outline" ? "100%" : undefined}
+              fill={variant === "solid" ? "currentColor" : "none"}
+              fillOpacity={variant === "solid" ? "100%" : undefined}
+              fillRule={variant === "solid" ? "evenodd" : undefined}
+              clipRule={variant === "solid" ? "evenodd" : undefined}
+            />
+          ))}
     </svg>
   );
 }
 
 Svg.propTypes = {
   variant: PropTypes.oneOf(["outline", "solid", "custom"]),
-  draw: PropTypes.array,
+  draw: PropTypes.arrayOf(PropTypes.string),
   viewBox: PropTypes.string,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-  strokeDark: PropTypes.string,
-  stroke: PropTypes.string,
-  fillDark: PropTypes.string,
-  fill: PropTypes.string,
-  fillHovered: PropTypes.string,
-  className: PropTypes.string,
+  width: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  height: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  current: PropTypes.bool,
+  className: PropTypes.string,  
   children: PropTypes.node,
-  hasChildren: PropTypes.bool
-}
+};
