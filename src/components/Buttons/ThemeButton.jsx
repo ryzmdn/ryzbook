@@ -1,20 +1,9 @@
-import { useEffect } from "react";
 import { Button } from "@/components/Buttons/Button";
 import { Svg } from "@/components/Optimizing/Svg";
 import { useTheme } from "@/context/ThemeProvider";
 
 export function ThemeButton() {
   const { darkMode, toggleTheme } = useTheme();
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("currentTheme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("currentTheme", "light");
-    }
-  }, [darkMode]);
 
   return (
     <Button
