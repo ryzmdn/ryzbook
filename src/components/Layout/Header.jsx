@@ -7,7 +7,7 @@ export function Header() {
       <div className="mb-8 flex justify-center">
         <div className="relative rounded-full px-3.5 py-1 text-sm/6 inline-flex items-center bg-pink-50 dark:bg-pink-400/10 font-medium text-pink-700 dark:text-pink-400 ring-1 ring-pink-700/10 dark:ring-pink-400/20 ring-inset">
           This guestbook is open source only on GitHub.{" "}
-          <Button href="https://github.com/ryzmdn/ryzbook" variant="text" aria-label="Visit github repository" defaultStyle={false} shadow={false} className="text-pink-900 dark:text-pink-600 font-semibold">
+          <Button href="https://github.com/ryzmdn/ryzbook" variant="link" aria-label="Visit github repository" className="text-pink-900 dark:text-pink-600 font-semibold">
             <span aria-hidden="true" className="absolute inset-0" /> Visit now <span aria-hidden="true">&rarr;</span>
           </Button>
         </div>

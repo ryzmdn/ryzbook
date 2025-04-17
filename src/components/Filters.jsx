@@ -31,7 +31,7 @@ export function FilterBar({
   return (
     <div className="flex flex-col justify-center gap-4 max-w-md mx-auto">
       <div className="flex justify-center items-center gap-x-6 w-max max-w-full">
-        <Button onClick={open} rounded aria-label="Create new message" className="shrink-0">
+        <Button onClick={open} aria-label="Create new message" rounded className="shrink-0">
           <Svg
             width={18}
             height={18}
