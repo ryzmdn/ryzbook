@@ -29,9 +29,9 @@ export function FilterBar({
   };
 
   return (
-    <div className="flex flex-col justify-center gap-4 max-w-md mx-auto">
-      <div className="flex justify-center items-center gap-x-6 w-max max-w-full">
-        <Button onClick={open} aria-label="Create new message" rounded className="shrink-0">
+    <div className="flex flex-col justify-stretch gap-4 w-full">
+      <div className="flex flex-col justify-center items-stretch gap-x-3.5 gap-y-3 w-full lg:flex-row">
+        <Button onClick={open} aria-label="Create new message" className="shrink-0 px-3 py-2">
           <Svg
             width={18}
             height={18}
@@ -41,6 +41,31 @@ export function FilterBar({
           />
           Send message
         </Button>
+
+        <div>
+          <Label htmlFor="searching" className="sr-only" text="Search by users" />
+          <div className="grid grid-cols-1">
+            <Field
+              id="searching"
+              name="searching"
+              type="search"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              placeholder="e.g. john doe"
+              maxLength={125}
+              className="col-start-1 row-start-1 font-medium py-2 pr-3 pl-10 rounded-md"
+            />
+            <Svg
+              width={16}
+              height={16}
+              draw={[
+                "M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z",
+              ]}
+              className="col-start-1 row-start-1 ml-3.5 self-center"
+            />
+          </div>
+        </div>
+
         <div>
           <Label
             htmlFor="category"
@@ -53,7 +78,7 @@ export function FilterBar({
               name="category"
               value={filterMessage}
               onChange={handleFilterChange}
-              className="col-start-1 row-start-1 appearance-none py-1 pl-4 pr-8 block w-full rounded-full bg-white text-sm/6 text-gray-700 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600"
+              className="col-start-1 row-start-1 font-medium appearance-none py-2 pl-4 pr-8 block w-full bg-white text-sm/6 text-gray-700 rounded-md outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-600"
             >
               {filters.map((filter) => (
                 <option key={filter.key} value={filter.key}>
@@ -67,30 +92,6 @@ export function FilterBar({
               height={14}
               draw={["m19.5 8.25-7.5 7.5-7.5-7.5"]}
               className="col-start-1 row-start-1 mr-2 self-center justify-self-end"
-            />
-          </div>
-        </div>
-
-        <div>
-          <Label htmlFor="searching" className="sr-only" text="Search by users" />
-          <div className="grid grid-cols-1">
-            <Field
-              id="searching"
-              name="searching"
-              type="search"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              placeholder="e.g. john doe"
-              maxLength={125}
-              className="col-start-1 row-start-1 rounded-full py-1 pr-3 pl-10 sm:py-1.5"
-            />
-            <Svg
-              width={16}
-              height={16}
-              draw={[
-                "M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z",
-              ]}
-              className="col-start-1 row-start-1 ml-3.5 self-center"
             />
           </div>
         </div>
