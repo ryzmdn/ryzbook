@@ -7,7 +7,9 @@ export function Sidebar({ open, close }) {
   useEffect(() => {
     if (open) {
       document.body.classList.add("overflow-hidden");
-    } else {
+    }
+    
+    return () => {
       document.body.classList.remove("overflow-hidden");
     }
   }, [open]);
