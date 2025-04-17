@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header
       aria-labelledby="website-header"
-      className="mx-auto w-full max-w-2xl bg-transparent px-3 py-16"
+      className="mx-auto w-full max-w-2xl bg-transparent pt-16 px-3 pb-5"
     >
       <span id="website-header" className="sr-only">
         Website Header
